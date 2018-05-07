@@ -10,6 +10,7 @@ stages:
 matrix:
   include:
     - stage: client
+      script: echo "something"
     - language: node_js
       script: echo $TRAVIS_PULL_REQUEST_BRANCH
     - script: echo ./test 1 # uses the default stage name "test"
