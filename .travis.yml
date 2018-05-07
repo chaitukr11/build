@@ -10,12 +10,15 @@ stages:
 matrix:
   include:
     - stage: client
-    - env:
+      env:
         - APP="Secrets"
       script: echo "something"
     - language: node_js
       script: echo $TRAVIS_PULL_REQUEST_BRANCH
-    - script: echo ./test 1 # uses the default stage name "test"
+    - sudo: true
+      env:
+        - APP="Monolith DB"
+      script: echo ./test 1 # uses the default stage name "test"
     - script: echo ./test 2
       script: echo ./deploy mobile
     - script: echo ./deploy api 
