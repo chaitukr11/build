@@ -3,13 +3,13 @@ sudo: required
 group: deprecated-2017Q4
 
 stages:
-  - client
+  - Build and Deploy
   - functional-test
 
 
 matrix:
   include:
-    - stage: client
+    - stage: Build and Deploy
       env:
         - APP="Secrets"
       script: echo "something"
