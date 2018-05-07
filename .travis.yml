@@ -10,6 +10,8 @@ stages:
 matrix:
   include:
     - stage: client
+    - env:
+        - APP="Secrets"
       script: echo "something"
     - language: node_js
       script: echo $TRAVIS_PULL_REQUEST_BRANCH
