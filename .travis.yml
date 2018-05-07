@@ -1,0 +1,25 @@
+dist: trusty
+sudo: required
+group: deprecated-2017Q4
+
+stages:
+  - client
+  - functional-test
+
+
+matrix:
+  include:
+    - stage: client
+    - language: node_js
+      script: echo $TRAVIS_PULL_REQUEST_BRANCH
+    - script: echo ./test 1 # uses the default stage name "test"
+    - script: echo ./test 2
+       script: echo ./deploy mobile
+    - script: echo ./deploy api 
+      script: echo test3
+      script: echo different test1
+      script: echo $TRAVIS_BRANCH
+      script: if [[ ${TRAVIS_BRANCH} != "master" ]]; then travis_terminate 0; fi
+      script: echo mobile step
+    - stage: functional-test
+script: echo api step
