@@ -14,7 +14,7 @@ matrix:
       script: echo $TRAVIS_PULL_REQUEST_BRANCH
     - script: echo ./test 1 # uses the default stage name "test"
     - script: echo ./test 2
-       script: echo ./deploy mobile
+      script: echo ./deploy mobile
     - script: echo ./deploy api 
       script: echo test3
       script: echo different test1
