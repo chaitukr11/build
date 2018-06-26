@@ -10,6 +10,9 @@ stages:
 matrix:
   include:
     - stage: Build and Deploy
+      stages:
+        - sub-stage1
+        - sub-stage2
       env:
         - APP="Secrets"
       script: echo "something"
