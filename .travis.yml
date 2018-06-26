@@ -13,6 +13,10 @@ matrix:
       stages:
         - sub-stage1
         - sub-stage2
+      matrix:
+        include:
+          - stage: sub-stage1
+            script: echo "sub-stage1"
       env:
         - APP="Secrets"
       script: echo "something"
