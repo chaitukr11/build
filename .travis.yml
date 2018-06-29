@@ -19,7 +19,7 @@ matrix:
             script: echo "sub-stage1"
       env:
         - APP="Secrets"
-      script: echo "something"
+      script: echo "something" ; exit 1
     - language: node_js
       script: echo $TRAVIS_PULL_REQUEST_BRANCH
     - sudo: true
