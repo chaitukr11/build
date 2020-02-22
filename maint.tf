@@ -30,7 +30,7 @@ resource "docker_container" "container_id" {
 }
 
 #Output the IP Address of the Container
-output "IP Address" {
+output "IPAddress" {
   value = "${docker_container.container_id.ip_address}"
 }
 
